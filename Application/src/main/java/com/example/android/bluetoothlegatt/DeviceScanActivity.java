@@ -26,6 +26,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,6 +38,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
 
 /**
  * Activity for scanning and displaying available Bluetooth LE devices.
@@ -51,9 +53,12 @@ public class DeviceScanActivity extends ListActivity {
     // Stops scanning after 10 seconds.
     private static final long SCAN_PERIOD = 10000;
 
+    private final String TAG = "ZZZZTTTT";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "--------start BLE --------");
         getActionBar().setTitle(R.string.title_devices);
         mHandler = new Handler();
 
