@@ -101,6 +101,7 @@ public class DeviceScanActivity extends ListActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Log.d(TAG, "----Item Sele:" + item.getItemId());
         switch (item.getItemId()) {
             case R.id.menu_scan:
                 mLeDeviceListAdapter.clear();
@@ -127,6 +128,7 @@ public class DeviceScanActivity extends ListActivity {
         }
 
         // Initializes list view adapter.
+        Log.d(TAG, "----Scan when app started.......");
         mLeDeviceListAdapter = new LeDeviceListAdapter();
         setListAdapter(mLeDeviceListAdapter);
         scanLeDevice(true);
